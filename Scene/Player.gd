@@ -10,6 +10,7 @@ var direction_x=0
 
 func _ready():
 	set_physics_process(true)
+	
 
 		
 
