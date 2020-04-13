@@ -2,16 +2,18 @@ extends KinematicBody2D
 
 
 const GRAVITY=10
-const SPEED=30
+
 const FLOOR=Vector2(0,-1)
 
 var velocity=Vector2()
 var direction=1
 
 func _ready():
+	$AnimatedSprite.play("walk")
 	pass 
 
 func _physics_process(delta):
+	var SPEED=30*Puntuacion.speed
 	velocity.x=SPEED*direction
 	if direction == 1:
 		$AnimatedSprite.flip_h = false
@@ -19,7 +21,7 @@ func _physics_process(delta):
 	elif direction == -1:
 		$AnimatedSprite.flip_h = true
 			
-	$AnimatedSprite.play("walk")
+	
 	velocity.y+=GRAVITY
 	velocity=move_and_slide(velocity,FLOOR)
 	if is_on_wall():
@@ -29,9 +31,8 @@ func _physics_process(delta):
 
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
-		print(collision.collider.name)
 		if collision.collider.name == "Player":
-			get_parent().get_node("Player").translate(Vector2(74.734,-49.198))
+			get_parent().get_node("Player").translate(Vector2(1.079,-4.971))
 			
 	#if $RayCast2D.is_colliding()==false:
 	#	$RayCast2D.position.x *=-1
