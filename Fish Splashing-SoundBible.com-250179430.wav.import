@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Fish Splashing-SoundBible.com-250179430.wav-a55f942fe44dffbaa208a6da293e0533.sample"
+
+[deps]
+
+source_file="res://Fish Splashing-SoundBible.com-250179430.wav"
+dest_files=[ "res://.import/Fish Splashing-SoundBible.com-250179430.wav-a55f942fe44dffbaa208a6da293e0533.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

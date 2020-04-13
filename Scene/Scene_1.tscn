@@ -1,0 +1,385 @@
+[gd_scene load_steps=53 format=2]
+
+[ext_resource path="res://Textures/SkyLine.png" type="Texture" id=1]
+[ext_resource path="res://TileSet/my_tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Scene/Scene_1.gd" type="Script" id=3]
+[ext_resource path="res://Textures/2DLight.png" type="Texture" id=4]
+[ext_resource path="res://Textures/Character/Idle_BlackCat1.png" type="Texture" id=5]
+[ext_resource path="res://Textures/Character/Idle_BlackCat2.png" type="Texture" id=6]
+[ext_resource path="res://Textures/Character/Idle_BlackCat3.png" type="Texture" id=7]
+[ext_resource path="res://Textures/Character/Idle_BlackCat4.png" type="Texture" id=8]
+[ext_resource path="res://Textures/Character/Idle_BlackCat5.png" type="Texture" id=9]
+[ext_resource path="res://Textures/Character/Idle_BlackCat6.png" type="Texture" id=10]
+[ext_resource path="res://Textures/Character/Idle_BlackCat7.png" type="Texture" id=11]
+[ext_resource path="res://Textures/Character/Idle_BlackCat8.png" type="Texture" id=12]
+[ext_resource path="res://Textures/Character/Idle_BlackCat9.png" type="Texture" id=13]
+[ext_resource path="res://Textures/Character/Attack_ground1.png" type="Texture" id=14]
+[ext_resource path="res://Textures/Character/Attack_ground2.png" type="Texture" id=15]
+[ext_resource path="res://Textures/Character/Attack_ground3.png" type="Texture" id=16]
+[ext_resource path="res://Textures/Character/Attack_ground4.png" type="Texture" id=17]
+[ext_resource path="res://Textures/Character/Attack_ground5.png" type="Texture" id=18]
+[ext_resource path="res://Textures/Character/Attack_ground6.png" type="Texture" id=19]
+[ext_resource path="res://Textures/Character/BlackCat1.png" type="Texture" id=20]
+[ext_resource path="res://Textures/Character/BlackCat2.png" type="Texture" id=21]
+[ext_resource path="res://Textures/Character/BlackCat3.png" type="Texture" id=22]
+[ext_resource path="res://Textures/Character/BlackCat4.png" type="Texture" id=23]
+[ext_resource path="res://Textures/Character/BlackCat5.png" type="Texture" id=24]
+[ext_resource path="res://Textures/Character/Damage1.png" type="Texture" id=25]
+[ext_resource path="res://Textures/Character/Damage2.png" type="Texture" id=26]
+[ext_resource path="res://Textures/Character/Jump_BlackCat1.png" type="Texture" id=27]
+[ext_resource path="res://Textures/Character/Jump_BlackCat2.png" type="Texture" id=28]
+[ext_resource path="res://Textures/Character/Jump_BlackCat3.png" type="Texture" id=29]
+[ext_resource path="res://Textures/Character/Jump_BlackCat4.png" type="Texture" id=30]
+[ext_resource path="res://Textures/Character/Jump_BlackCat5.png" type="Texture" id=31]
+[ext_resource path="res://Textures/Character/Jump_BlackCat6.png" type="Texture" id=32]
+[ext_resource path="res://Textures/Character/Jump_BlackCat7.png" type="Texture" id=33]
+[ext_resource path="res://Textures/Character/Jump_BlackCat8.png" type="Texture" id=34]
+[ext_resource path="res://Textures/Character/Jump_BlackCat9.png" type="Texture" id=35]
+[ext_resource path="res://Scene/Player.gd" type="Script" id=36]
+[ext_resource path="res://248390595007212.png" type="Texture" id=37]
+[ext_resource path="res://Oswald-Bold.ttf" type="DynamicFontData" id=38]
+[ext_resource path="res://Scene/Area2D.gd" type="Script" id=39]
+[ext_resource path="res://Fish Splashing-SoundBible.com-250179430.wav" type="AudioStream" id=40]
+[ext_resource path="res://Ta Da-SoundBible.com-1884170640.wav" type="AudioStream" id=41]
+[ext_resource path="res://Scene/win_sound.gd" type="Script" id=42]
+[ext_resource path="res://Happy Boy End Theme.ogg" type="AudioStream" id=43]
+[ext_resource path="res://icon.png" type="Texture" id=44]
+[ext_resource path="res://Scene/Mounstruo.gd" type="Script" id=45]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1.08906, 65.1417 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": true,
+"name": "damage",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ) ],
+"loop": false,
+"name": "Cat_jump",
+"speed": 24.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "Cat_idle",
+"speed": 7.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Cat_attack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "Cat_walk",
+"speed": 12.0
+} ]
+
+[sub_resource type="CanvasItemMaterial" id=3]
+
+[sub_resource type="StyleBoxTexture" id=4]
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 38 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 12.3591, 8.6823 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 17.598, 16.0441 )
+
+[node name="World" type="Node2D"]
+position = Vector2( 1.64107, -3.16547 )
+script = ExtResource( 3 )
+
+[node name="SkyLine" type="Sprite" parent="."]
+position = Vector2( 570.882, -376.514 )
+texture = ExtResource( 1 )
+
+[node name="SkyLine2" type="Sprite" parent="."]
+position = Vector2( 3249.19, -364.928 )
+texture = ExtResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+collision_layer = 4
+format = 1
+tile_data = PoolIntArray( -1507272, 0, 0, -1507271, 0, 0, -1507270, 0, 0, -1507269, 0, 0, -1507268, 0, 0, -1507267, 0, 0, -1441736, 0, 0, -1441730, 0, 0, -1441729, 0, 0, -1441728, 0, 0, -1441727, 0, 0, -1441726, 0, 0, -1441725, 0, 0, -1441724, 0, 0, -1441723, 0, 0, -1441722, 0, 0, -1441721, 0, 0, -1441720, 0, 0, -1441719, 0, 0, -1441718, 0, 0, -1441717, 0, 0, -1441716, 0, 0, -1441715, 0, 0, -1441714, 0, 0, -1441713, 0, 0, -1441712, 0, 0, -1441711, 0, 0, -1376201, 0, 0, -1376200, 0, 0, -1376174, 0, 0, -1376173, 0, 0, -1376172, 0, 0, -1310720, 0, 0, -1310719, 0, 0, -1310718, 0, 0, -1310717, 0, 0, -1310716, 0, 0, -1310715, 0, 0, -1310714, 0, 0, -1310713, 0, 0, -1310712, 0, 0, -1310711, 0, 0, -1310710, 0, 0, -1310709, 0, 0, -1310708, 0, 0, -1310707, 0, 0, -1310706, 0, 0, -1310705, 0, 0, -1310704, 0, 0, -1310703, 0, 0, -1310702, 0, 0, -1310701, 0, 0, -1310700, 0, 0, -1310699, 0, 0, -1310698, 0, 0, -1310697, 0, 0, -1310696, 0, 0, -1310695, 0, 0, -1310694, 0, 0, -1310693, 0, 0, -1310692, 0, 0, -1310691, 0, 0, -1310690, 0, 0, -1310689, 0, 0, -1310688, 0, 0, -1310687, 0, 0, -1310686, 0, 0, -1310685, 0, 0, -1310665, 0, 0, -1310636, 0, 0, -1245184, 0, 0, -1245166, 0, 0, -1245149, 0, 0, -1245129, 0, 0, -1245100, 0, 0, -1179648, 0, 0, -1179630, 0, 0, -1179613, 0, 0, -1179593, 0, 0, -1179564, 0, 0, -1114112, 0, 0, -1114094, 0, 0, -1114077, 0, 0, -1114057, 0, 0, -1114028, 0, 0, -1048576, 0, 0, -1048558, 0, 0, -1048541, 0, 0, -1048521, 0, 0, -1048492, 0, 0, -983040, 0, 0, -983029, 0, 0, -983022, 0, 0, -983014, 0, 0, -983005, 0, 0, -982985, 0, 0, -982956, 0, 0, -917504, 0, 0, -917493, 0, 0, -917486, 0, 0, -917485, 0, 0, -917484, 0, 0, -917478, 0, 0, -917469, 0, 0, -917449, 0, 0, -917436, 0, 0, -917427, 0, 0, -917426, 0, 0, -917425, 0, 0, -917420, 0, 0, -851968, 0, 0, -851957, 0, 0, -851952, 0, 0, -851951, 0, 0, -851950, 0, 0, -851942, 0, 0, -851933, 0, 0, -851913, 0, 0, -851900, 0, 0, -851899, 0, 0, -851892, 0, 0, -851884, 0, 0, -786432, 0, 0, -786421, 0, 0, -786414, 0, 0, -786408, 0, 0, -786407, 0, 0, -786406, 0, 0, -786397, 0, 0, -786377, 0, 0, -786368, 0, 0, -786359, 0, 0, -786358, 0, 0, -786348, 0, 0, -720896, 0, 0, -720885, 0, 0, -720884, 0, 0, -720883, 0, 0, -720882, 0, 0, -720878, 0, 0, -720870, 0, 0, -720861, 0, 0, -720841, 0, 0, -720832, 0, 0, -720830, 0, 0, -720825, 0, 0, -720812, 0, 0, -655360, 0, 0, -655349, 0, 0, -655342, 0, 0, -655334, 0, 0, -655325, 0, 0, -655305, 0, 0, -655296, 0, 0, -655292, 0, 0, -655276, 0, 0, -589824, 0, 0, -589813, 0, 0, -589806, 0, 0, -589805, 0, 0, -589804, 0, 0, -589803, 0, 0, -589802, 0, 0, -589798, 0, 0, -589789, 0, 0, -589769, 0, 0, -589757, 0, 0, -589756, 0, 0, -589752, 0, 0, -589751, 0, 0, -589740, 0, 0, -524288, 0, 0, -524277, 0, 0, -524271, 0, 0, -524270, 0, 0, -524269, 0, 0, -524262, 0, 0, -524253, 0, 0, -524233, 0, 0, -524221, 0, 0, -524220, 0, 0, -524219, 0, 0, -524215, 0, 0, -524213, 0, 0, -524211, 0, 0, -524210, 0, 0, -524209, 0, 0, -524207, 0, 0, -524205, 0, 0, -524204, 0, 0, -458752, 0, 0, -458741, 0, 0, -458734, 0, 0, -458726, 0, 0, -458717, 0, 0, -458697, 0, 0, -458696, 0, 0, -458695, 0, 0, -458694, 0, 0, -458693, 0, 0, -458692, 0, 0, -458691, 0, 0, -458690, 0, 0, -458689, 0, 0, -458688, 0, 0, -458687, 0, 0, -458686, 0, 0, -458685, 0, 0, -458684, 0, 0, -458683, 0, 0, -458682, 0, 0, -458681, 0, 0, -458680, 0, 0, -458679, 0, 0, -458678, 0, 0, -458677, 0, 0, -458676, 0, 0, -458675, 0, 0, -458674, 0, 0, -458673, 0, 0, -458672, 0, 0, -458671, 0, 0, -458670, 0, 0, -458669, 0, 0, -458668, 0, 0, -458667, 0, 0, -393216, 0, 0, -393205, 0, 0, -393204, 0, 0, -393203, 0, 0, -393202, 0, 0, -393198, 0, 0, -393190, 0, 0, -393181, 0, 0, -393161, 0, 0, -393160, 0, 0, -393159, 0, 0, -393158, 0, 0, -393157, 0, 0, -393156, 0, 0, -393155, 0, 0, -393154, 0, 0, -393153, 0, 0, -393152, 0, 0, -393151, 0, 0, -393150, 0, 0, -393149, 0, 0, -393148, 0, 0, -393147, 0, 0, -393146, 0, 0, -393145, 0, 0, -393144, 0, 0, -393143, 0, 0, -393142, 0, 0, -393141, 0, 0, -393140, 0, 0, -393139, 0, 0, -393138, 0, 0, -393137, 0, 0, -393136, 0, 0, -393135, 0, 0, -393134, 0, 0, -393133, 0, 0, -393132, 0, 0, -393131, 0, 0, -327680, 0, 0, -327669, 0, 0, -327662, 0, 0, -327658, 0, 0, -327657, 0, 0, -327656, 0, 0, -327655, 0, 0, -327654, 0, 0, -327645, 0, 0, -262144, 0, 0, -262133, 0, 0, -262118, 0, 0, -262109, 0, 0, -196608, 0, 0, -196597, 0, 0, -196582, 0, 0, -196573, 0, 0, -131072, 0, 0, -131061, 0, 0, -131046, 0, 0, -131037, 0, 0, -65536, 0, 0, -65535, 0, 0, -65534, 0, 0, -65533, 0, 0, -65532, 0, 0, -65531, 0, 0, -65530, 0, 0, -65529, 0, 0, -65528, 0, 0, -65527, 0, 0, -65526, 0, 0, -65525, 0, 0, -65524, 0, 0, -65523, 0, 0, -65522, 0, 0, -65521, 0, 0, -65520, 0, 0, -65519, 0, 0, -65518, 0, 0, -65517, 0, 0, -65516, 0, 0, -65515, 0, 0, -65514, 0, 0, -65513, 0, 0, -65512, 0, 0, -65511, 0, 0, -65510, 0, 0, -65509, 0, 0, -65508, 0, 0, -65507, 0, 0, -65506, 0, 0, -65505, 0, 0, -65504, 0, 0, -65503, 0, 0, -65502, 0, 0, -65501, 0, 0, 0, 655463, 0 )
+
+[node name="Player" type="KinematicBody2D" parent="." groups=[
+"Player",
+]]
+position = Vector2( 74.7343, -49.1982 )
+scale = Vector2( 1, 1.01042 )
+z_index = 1
+collision_mask = 2
+script = ExtResource( 36 )
+
+[node name="Light2D" type="Light2D" parent="Player"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+shadow_enabled = true
+
+[node name="RayCast2D" type="Node2D" parent="Player"]
+position = Vector2( 0.322388, -4.94568 )
+
+[node name="ray_1" type="RayCast2D" parent="Player/RayCast2D"]
+position = Vector2( -6.03401, 5.97167 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 6
+
+[node name="ray_2" type="RayCast2D" parent="Player/RayCast2D"]
+position = Vector2( 0.258179, 6.07254 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 6
+
+[node name="ray_3" type="RayCast2D" parent="Player/RayCast2D"]
+position = Vector2( 5.8944, 5.98958 )
+enabled = true
+cast_to = Vector2( 0, 10 )
+collision_mask = 6
+
+[node name="ray_4" type="RayCast2D" parent="Player/RayCast2D"]
+position = Vector2( -0.230713, 5.48291 )
+enabled = true
+cast_to = Vector2( 12, 0 )
+
+[node name="ray_5" type="RayCast2D" parent="Player/RayCast2D"]
+position = Vector2( -0.307861, 5.48289 )
+enabled = true
+cast_to = Vector2( -12, 0 )
+
+[node name="ray_6" type="RayCast2D" parent="Player/RayCast2D"]
+position = Vector2( 0.153809, 5.86366 )
+enabled = true
+cast_to = Vector2( 0, -10 )
+
+[node name="ray_7" type="RayCast2D" parent="Player/RayCast2D"]
+position = Vector2( -5.9248, 6.01596 )
+enabled = true
+cast_to = Vector2( 0, -10 )
+
+[node name="ray_8" type="RayCast2D" parent="Player/RayCast2D"]
+position = Vector2( 6.00171, 6.16826 )
+enabled = true
+cast_to = Vector2( 0, -10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 0.488724, 0.984573 )
+scale = Vector2( 18.35, 0.23 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+show_behind_parent = true
+position = Vector2( 1.07944, -4.97071 )
+scale = Vector2( 3.34135, 2.8327 )
+frames = SubResource( 2 )
+animation = "Cat_walk"
+frame = 4
+playing = true
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2( 0.37738, -2.18279e-11 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Label" type="Label" parent="Player/Camera2D"]
+material = SubResource( 3 )
+margin_left = -122.862
+margin_top = -65.9336
+margin_right = -94.8624
+margin_bottom = -40.9336
+custom_styles/normal = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0.972549, 0.972549, 0.972549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AttSound" type="AudioStreamPlayer2D" parent="Player"]
+volume_db = -1.908
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 787.804, -422.536 )
+script = ExtResource( 39 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=[
+"pescado_group",
+]]
+position = Vector2( 3.3186, 7.1424 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+position = Vector2( -89.8457, -28.1206 )
+scale = Vector2( 0.0523174, 0.0519602 )
+texture = ExtResource( 37 )
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 205.243, -302.445 )
+script = ExtResource( 39 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" groups=[
+"pescado_group",
+]]
+position = Vector2( -0.5448, 10.7587 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D2"]
+position = Vector2( 0.895264, 8.95752 )
+scale = Vector2( 0.0523174, 0.0519602 )
+texture = ExtResource( 37 )
+
+[node name="Area2D3" type="Area2D" parent="."]
+position = Vector2( 932.658, -227.636 )
+script = ExtResource( 39 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D3" groups=[
+"pescado_group",
+]]
+position = Vector2( -1.34717, 1.51831 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D3"]
+position = Vector2( -0.697144, 0.90918 )
+scale = Vector2( 0.0523174, 0.0519602 )
+texture = ExtResource( 37 )
+
+[node name="Area2D4" type="Area2D" parent="."]
+position = Vector2( 423.294, -244.761 )
+script = ExtResource( 39 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D4" groups=[
+"pescado_group",
+]]
+position = Vector2( 2.54858, -1.86887 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D4"]
+position = Vector2( 3.19849, -2.47778 )
+scale = Vector2( 0.0523174, 0.0519602 )
+texture = ExtResource( 37 )
+
+[node name="Area2D5" type="Area2D" parent="."]
+position = Vector2( 498.459, -385.21 )
+script = ExtResource( 39 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D5" groups=[
+"pescado_group",
+]]
+position = Vector2( 1.78223, 2.84799 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D5"]
+position = Vector2( 2.42236, 2.23901 )
+scale = Vector2( 0.0523174, 0.0519602 )
+texture = ExtResource( 37 )
+
+[node name="Area2D6" type="Area2D" parent="."]
+position = Vector2( 704.465, -310.002 )
+script = ExtResource( 39 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D6" groups=[
+"pescado_group",
+]]
+position = Vector2( 4.30615, 6.31783 )
+shape = SubResource( 6 )
+
+[node name="Sprite" type="Sprite" parent="Area2D6"]
+position = Vector2( 4.95605, 5.70874 )
+scale = Vector2( 0.0523174, 0.0519602 )
+texture = ExtResource( 37 )
+
+[node name="sound" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource( 40 )
+
+[node name="win_sound" type="Node2D" parent="."]
+script = ExtResource( 42 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="win_sound"]
+stream = ExtResource( 41 )
+
+[node name="backgroundsound" type="Node2D" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="backgroundsound"]
+stream = ExtResource( 43 )
+autoplay = true
+
+[node name="Caja" type="KinematicBody2D" parent="."]
+script = ExtResource( 45 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caja"]
+position = Vector2( 296.434, -106.445 )
+shape = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Caja"]
+position = Vector2( 338.149, -90.8109 )
+scale = Vector2( 0.736289, 0.674614 )
+texture = ExtResource( 44 )
+offset = Vector2( -63.6987, -14.7523 )
+
+[node name="Caja2" type="KinematicBody2D" parent="."]
+script = ExtResource( 45 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caja2"]
+position = Vector2( 105.711, -191.121 )
+shape = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Caja2"]
+position = Vector2( 147.94, -182.674 )
+scale = Vector2( 0.736289, 0.674614 )
+texture = ExtResource( 44 )
+offset = Vector2( -63.6987, -14.7523 )
+
+[node name="Caja3" type="KinematicBody2D" parent="."]
+script = ExtResource( 45 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caja3"]
+position = Vector2( 298.325, -264.443 )
+shape = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Caja3"]
+position = Vector2( 340.554, -255.996 )
+scale = Vector2( 0.736289, 0.674614 )
+texture = ExtResource( 44 )
+offset = Vector2( -63.6987, -14.7523 )
+
+[node name="Caja4" type="KinematicBody2D" parent="."]
+script = ExtResource( 45 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caja4"]
+position = Vector2( 89.3676, -339.219 )
+shape = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Caja4"]
+position = Vector2( 131.597, -330.772 )
+scale = Vector2( 0.736289, 0.674614 )
+texture = ExtResource( 44 )
+offset = Vector2( -63.6987, -14.7523 )
+
+[node name="Caja5" type="KinematicBody2D" parent="."]
+script = ExtResource( 45 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Caja5"]
+position = Vector2( 272.413, -421.234 )
+shape = SubResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Caja5"]
+position = Vector2( 314.642, -412.786 )
+scale = Vector2( 0.736289, 0.674614 )
+texture = ExtResource( 44 )
+offset = Vector2( -63.6987, -14.7523 )
+[connection signal="animation_finished" from="Player/AnimatedSprite" to="Player" method="_on_AnimatedSprite_animation_finished"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D5" to="Area2D5" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D6" to="Area2D6" method="_on_Area2D_body_entered"]
