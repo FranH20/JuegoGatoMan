@@ -142,7 +142,7 @@ radius = 196.95
 extents = Vector2( 19.9443, 12.9301 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 20.7379, 9.63342 )
+extents = Vector2( 17.3371, 9.63342 )
 
 [node name="World" type="Node2D"]
 position = Vector2( 1.64107, -3.16547 )
@@ -237,7 +237,7 @@ position = Vector2( 1.07944, -4.97071 )
 scale = Vector2( 3.34135, 2.8327 )
 frames = SubResource( 2 )
 animation = "Cat_walk"
-frame = 3
+frame = 4
 playing = true
 flip_h = true
 
@@ -272,7 +272,7 @@ script = ExtResource( 39 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=[
 "pescado_group",
 ]]
-position = Vector2( 3.3186, 7.1424 )
+position = Vector2( -90.4282, -25.867 )
 shape = SubResource( 7 )
 
 [node name="Sprite" type="Sprite" parent="Area2D"]
@@ -483,6 +483,31 @@ shape = SubResource( 12 )
 position = Vector2( 456.763, -201.854 )
 scale = Vector2( 0.67821, 0.598984 )
 texture = ExtResource( 57 )
+
+[node name="trampas2" type="Area2D" parent="."]
+script = ExtResource( 58 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trampas2"]
+position = Vector2( 802.836, -169.783 )
+shape = SubResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="trampas2"]
+position = Vector2( 803.419, -169.274 )
+scale = Vector2( 0.877586, 0.598984 )
+texture = ExtResource( 57 )
+
+[node name="trampas3" type="Area2D" parent="."]
+position = Vector2( -0.5271, -223.372 )
+script = ExtResource( 58 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="trampas3"]
+position = Vector2( 814.694, -170.837 )
+shape = SubResource( 12 )
+
+[node name="Sprite" type="Sprite" parent="trampas3"]
+position = Vector2( 814.092, -170.328 )
+scale = Vector2( 0.527599, 0.651689 )
+texture = ExtResource( 57 )
 [connection signal="animation_finished" from="Player/AnimatedSprite" to="Player" method="_on_AnimatedSprite_animation_finished"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D_body_entered"]
@@ -493,3 +518,5 @@ texture = ExtResource( 57 )
 [connection signal="body_entered" from="enemy/AnimatedSprite/enemynode/areaenemy" to="enemy/AnimatedSprite/enemynode/areaenemy" method="_on_areaenemy_body_entered"]
 [connection signal="body_exited" from="enemy/AnimatedSprite/enemynode/areaenemy" to="enemy/AnimatedSprite/enemynode/areaenemy" method="_on_areaenemy_body_exited"]
 [connection signal="body_entered" from="trampas" to="trampas" method="_on_trampas_body_entered"]
+[connection signal="body_entered" from="trampas2" to="trampas2" method="_on_trampas_body_entered"]
+[connection signal="body_entered" from="trampas3" to="trampas3" method="_on_trampas_body_entered"]
