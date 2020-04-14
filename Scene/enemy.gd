@@ -32,7 +32,8 @@ func _physics_process(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision.collider.name == "Player":
-			get_parent().get_node("Player").translate(Vector2(1.079,-4.971))
+			queue_free()
+			get_tree().reload_current_scene()
 			
 	#if $RayCast2D.is_colliding()==false:
 	#	$RayCast2D.position.x *=-1

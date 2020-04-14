@@ -34,6 +34,7 @@ func _physics_process(delta):
 		$Sprite.flip_h = true
 
 	EnemyMotion.x = EnemyDirection * EnemySpeed
+	
 	EnemyMotion = move_and_slide(EnemyMotion, UP,false,4,0.785398,false)
 	
 	

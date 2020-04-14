@@ -21,7 +21,7 @@ func _on_areaenemy_body_entered(body):
 		#sprite.set_texture(frame)
 		var sprite=get_parent().get_parent().get_parent().get_node("AnimatedSprite")
 		sprite.play("superdog")
-		Puntuacion.speed=2
+		Puntuacion.speed=4
 		print("ENTRO")
 
 

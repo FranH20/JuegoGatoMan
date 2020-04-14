@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var speed=100
-export var jump_speed=250
+export var jump_speed=270
 export var gravity=300
 
 var distance=Vector2()

@@ -15,4 +15,5 @@ func _ready():
 
 func _on_trampas_body_entered(body):
 	if body.is_in_group("Player"):
-		print("DEAD")
+		queue_free()
+		get_tree().reload_current_scene()
