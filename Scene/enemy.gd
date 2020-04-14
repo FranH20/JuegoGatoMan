@@ -32,6 +32,7 @@ func _physics_process(delta):
 	for i in get_slide_count():
 		var collision = get_slide_collision(i)
 		if collision.collider.name == "Player":
+			Puntuacion.puntuacion=0
 			queue_free()
 			get_tree().reload_current_scene()
 			

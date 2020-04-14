@@ -243,7 +243,7 @@ position = Vector2( 1.07944, -4.97071 )
 scale = Vector2( 3.34135, 2.8327 )
 frames = SubResource( 2 )
 animation = "Cat_walk"
-frame = 2
+frame = 1
 playing = true
 flip_h = true
 
